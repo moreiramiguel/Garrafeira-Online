@@ -45,10 +45,11 @@ namespace Garrafeira
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(0, 2);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(995, 79);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // button4
@@ -59,6 +60,7 @@ namespace Garrafeira
             this.button4.TabIndex = 3;
             this.button4.Text = "Fornecedores";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -68,6 +70,7 @@ namespace Garrafeira
             this.button5.TabIndex = 4;
             this.button5.Text = "Opções";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -77,6 +80,7 @@ namespace Garrafeira
             this.button3.TabIndex = 2;
             this.button3.Text = "Viaturas";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -86,6 +90,7 @@ namespace Garrafeira
             this.button1.TabIndex = 0;
             this.button1.Text = "Bebidas";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -95,6 +100,7 @@ namespace Garrafeira
             this.button2.TabIndex = 1;
             this.button2.Text = "Clientes";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Opçoes
             // 

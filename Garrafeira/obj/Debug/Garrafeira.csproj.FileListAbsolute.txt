@@ -13,3 +13,18 @@ C:\Users\morei\OneDrive\Ambiente de Trabalho\Projeto_BD\forms\Garrafeira\Garrafe
 C:\Users\morei\OneDrive\Ambiente de Trabalho\Projeto_BD\forms\Garrafeira\Garrafeira\obj\Debug\Garrafeira.Fornecedores.resources
 C:\Users\morei\OneDrive\Ambiente de Trabalho\Projeto_BD\forms\Garrafeira\Garrafeira\obj\Debug\Garrafeira.Opçoes.resources
 C:\Users\morei\OneDrive\Ambiente de Trabalho\Projeto_BD\forms\Garrafeira\Garrafeira\obj\Debug\Garrafeira.Viaturas.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\bin\Debug\Garrafeira.exe.config
+C:\GitHub\Garrafeira-Online\Garrafeira\bin\Debug\Garrafeira.exe
+C:\GitHub\Garrafeira-Online\Garrafeira\bin\Debug\Garrafeira.pdb
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.csproj.AssemblyReference.cache
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Bebidas.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Clientes.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Form1.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Fornecedores.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Opçoes.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Properties.Resources.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Viaturas.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.csproj.GenerateResource.cache
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.csproj.CoreCompileInputs.cache
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.exe
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.pdb

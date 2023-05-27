@@ -16,5 +16,45 @@ namespace Garrafeira
         {
             InitializeComponent();
         }
+
+        private void Fornecedores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Bebidas bebidas = new Bebidas();
+            bebidas.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes clientes = new Clientes();
+            clientes.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fornecedores fornecedores = new Fornecedores();
+            fornecedores.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Viaturas viaturas = new Viaturas();
+            viaturas.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Opçoes opcoes = new Opçoes();
+            opcoes.Show();
+        }
     }
 }
