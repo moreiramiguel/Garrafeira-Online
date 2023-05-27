@@ -38,6 +38,8 @@ namespace Garrafeira
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -136,6 +138,8 @@ namespace Garrafeira
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.treeView1);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.textBox4);
@@ -150,6 +154,23 @@ namespace Garrafeira
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Adicionar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(685, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Foto";
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(688, 46);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(188, 190);
+            this.treeView1.TabIndex = 17;
             // 
             // button6
             // 
@@ -157,7 +178,7 @@ namespace Garrafeira
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(116, 60);
             this.button6.TabIndex = 11;
-            this.button6.Text = "Adicionar Cliente";
+            this.button6.Text = "Adicionar Fornecedor";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -244,5 +265,7 @@ namespace Garrafeira
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
