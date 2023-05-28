@@ -40,8 +40,6 @@ namespace Garrafeira {
         
         private Viaturas_GarrafeiraDataTable tableViaturas_Garrafeira;
         
-        private global::System.Data.DataRelation relationFK__bebidas_a__garra__4589517F;
-        
         private global::System.Data.DataRelation relationFK__cria__cliente_ni__51EF2864;
         
         private global::System.Data.DataRelation relationFK__cria__numero_enc__52E34C9D;
@@ -374,7 +372,6 @@ namespace Garrafeira {
                     this.tableViaturas_Garrafeira.InitVars();
                 }
             }
-            this.relationFK__bebidas_a__garra__4589517F = this.Relations["FK__bebidas_a__garra__4589517F"];
             this.relationFK__cria__cliente_ni__51EF2864 = this.Relations["FK__cria__cliente_ni__51EF2864"];
             this.relationFK__cria__numero_enc__52E34C9D = this.Relations["FK__cria__numero_enc__52E34C9D"];
             this.relationFK__encomenda__clien__4E1E9780 = this.Relations["FK__encomenda__clien__4E1E9780"];
@@ -406,10 +403,6 @@ namespace Garrafeira {
             base.Tables.Add(this.tableGarrafeira);
             this.tableViaturas_Garrafeira = new Viaturas_GarrafeiraDataTable();
             base.Tables.Add(this.tableViaturas_Garrafeira);
-            this.relationFK__bebidas_a__garra__4589517F = new global::System.Data.DataRelation("FK__bebidas_a__garra__4589517F", new global::System.Data.DataColumn[] {
-                        this.tableGarrafeira.NIFColumn}, new global::System.Data.DataColumn[] {
-                        this.tablebebidas_alcoolicas.garrafeira_nifColumn}, false);
-            this.Relations.Add(this.relationFK__bebidas_a__garra__4589517F);
             this.relationFK__cria__cliente_ni__51EF2864 = new global::System.Data.DataRelation("FK__cria__cliente_ni__51EF2864", new global::System.Data.DataColumn[] {
                         this.tablecliente_garrafeira.NIFColumn}, new global::System.Data.DataColumn[] {
                         this.tablecria.cliente_nifColumn}, false);
@@ -566,19 +559,19 @@ namespace Garrafeira {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class bebidas_alcoolicasDataTable : global::System.Data.TypedTableBase<bebidas_alcoolicasRow> {
             
-            private global::System.Data.DataColumn columncodigo;
-            
-            private global::System.Data.DataColumn columngarrafeira_nif;
-            
             private global::System.Data.DataColumn columnmarca;
             
             private global::System.Data.DataColumn columnteor;
             
-            private global::System.Data.DataColumn columniva;
-            
             private global::System.Data.DataColumn columnstock;
             
             private global::System.Data.DataColumn columnlitragem;
+            
+            private global::System.Data.DataColumn columnnome;
+            
+            private global::System.Data.DataColumn columntipo;
+            
+            private global::System.Data.DataColumn columnnaturalidade;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -615,22 +608,6 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn codigoColumn {
-                get {
-                    return this.columncodigo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn garrafeira_nifColumn {
-                get {
-                    return this.columngarrafeira_nif;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn marcaColumn {
                 get {
                     return this.columnmarca;
@@ -647,14 +624,6 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ivaColumn {
-                get {
-                    return this.columniva;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn stockColumn {
                 get {
                     return this.columnstock;
@@ -666,6 +635,30 @@ namespace Garrafeira {
             public global::System.Data.DataColumn litragemColumn {
                 get {
                     return this.columnlitragem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nomeColumn {
+                get {
+                    return this.columnnome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn tipoColumn {
+                get {
+                    return this.columntipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn naturalidadeColumn {
+                get {
+                    return this.columnnaturalidade;
                 }
             }
             
@@ -706,19 +699,16 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bebidas_alcoolicasRow Addbebidas_alcoolicasRow(int codigo, GarrafeiraRow parentGarrafeiraRowByFK__bebidas_a__garra__4589517F, string marca, double teor, double iva, int stock, double litragem) {
+            public bebidas_alcoolicasRow Addbebidas_alcoolicasRow(string marca, double teor, int stock, double litragem, string nome, string tipo, string naturalidade) {
                 bebidas_alcoolicasRow rowbebidas_alcoolicasRow = ((bebidas_alcoolicasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        codigo,
-                        null,
                         marca,
                         teor,
-                        iva,
                         stock,
-                        litragem};
-                if ((parentGarrafeiraRowByFK__bebidas_a__garra__4589517F != null)) {
-                    columnValuesArray[1] = parentGarrafeiraRowByFK__bebidas_a__garra__4589517F[0];
-                }
+                        litragem,
+                        nome,
+                        tipo,
+                        naturalidade};
                 rowbebidas_alcoolicasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbebidas_alcoolicasRow);
                 return rowbebidas_alcoolicasRow;
@@ -726,10 +716,9 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bebidas_alcoolicasRow FindBycodigogarrafeira_nif(int codigo, int garrafeira_nif) {
+            public bebidas_alcoolicasRow FindBynome(string nome) {
                 return ((bebidas_alcoolicasRow)(this.Rows.Find(new object[] {
-                            codigo,
-                            garrafeira_nif})));
+                            nome})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -749,38 +738,40 @@ namespace Garrafeira {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columncodigo = base.Columns["codigo"];
-                this.columngarrafeira_nif = base.Columns["garrafeira_nif"];
                 this.columnmarca = base.Columns["marca"];
                 this.columnteor = base.Columns["teor"];
-                this.columniva = base.Columns["iva"];
                 this.columnstock = base.Columns["stock"];
                 this.columnlitragem = base.Columns["litragem"];
+                this.columnnome = base.Columns["nome"];
+                this.columntipo = base.Columns["tipo"];
+                this.columnnaturalidade = base.Columns["naturalidade"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodigo);
-                this.columngarrafeira_nif = new global::System.Data.DataColumn("garrafeira_nif", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngarrafeira_nif);
                 this.columnmarca = new global::System.Data.DataColumn("marca", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmarca);
                 this.columnteor = new global::System.Data.DataColumn("teor", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnteor);
-                this.columniva = new global::System.Data.DataColumn("iva", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columniva);
                 this.columnstock = new global::System.Data.DataColumn("stock", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstock);
                 this.columnlitragem = new global::System.Data.DataColumn("litragem", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlitragem);
+                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
+                this.columnnaturalidade = new global::System.Data.DataColumn("naturalidade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnaturalidade);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncodigo,
-                                this.columngarrafeira_nif}, true));
-                this.columncodigo.AllowDBNull = false;
-                this.columngarrafeira_nif.AllowDBNull = false;
+                                this.columnnome}, true));
                 this.columnmarca.MaxLength = 25;
+                this.columnnome.AllowDBNull = false;
+                this.columnnome.Unique = true;
+                this.columnnome.MaxLength = 30;
+                this.columntipo.MaxLength = 15;
+                this.columnnaturalidade.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2994,28 +2985,6 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int codigo {
-                get {
-                    return ((int)(this[this.tablebebidas_alcoolicas.codigoColumn]));
-                }
-                set {
-                    this[this.tablebebidas_alcoolicas.codigoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int garrafeira_nif {
-                get {
-                    return ((int)(this[this.tablebebidas_alcoolicas.garrafeira_nifColumn]));
-                }
-                set {
-                    this[this.tablebebidas_alcoolicas.garrafeira_nifColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string marca {
                 get {
                     try {
@@ -3043,22 +3012,6 @@ namespace Garrafeira {
                 }
                 set {
                     this[this.tablebebidas_alcoolicas.teorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double iva {
-                get {
-                    try {
-                        return ((double)(this[this.tablebebidas_alcoolicas.ivaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'iva\' na tabela \'bebidas_alcoolicas\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablebebidas_alcoolicas.ivaColumn] = value;
                 }
             }
             
@@ -3096,12 +3049,44 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GarrafeiraRow GarrafeiraRow {
+            public string nome {
                 get {
-                    return ((GarrafeiraRow)(this.GetParentRow(this.Table.ParentRelations["FK__bebidas_a__garra__4589517F"])));
+                    return ((string)(this[this.tablebebidas_alcoolicas.nomeColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__bebidas_a__garra__4589517F"]);
+                    this[this.tablebebidas_alcoolicas.nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string tipo {
+                get {
+                    try {
+                        return ((string)(this[this.tablebebidas_alcoolicas.tipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'tipo\' na tabela \'bebidas_alcoolicas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebebidas_alcoolicas.tipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string naturalidade {
+                get {
+                    try {
+                        return ((string)(this[this.tablebebidas_alcoolicas.naturalidadeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'naturalidade\' na tabela \'bebidas_alcoolicas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebebidas_alcoolicas.naturalidadeColumn] = value;
                 }
             }
             
@@ -3131,18 +3116,6 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsivaNull() {
-                return this.IsNull(this.tablebebidas_alcoolicas.ivaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetivaNull() {
-                this[this.tablebebidas_alcoolicas.ivaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsstockNull() {
                 return this.IsNull(this.tablebebidas_alcoolicas.stockColumn);
             }
@@ -3163,6 +3136,30 @@ namespace Garrafeira {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetlitragemNull() {
                 this[this.tablebebidas_alcoolicas.litragemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IstipoNull() {
+                return this.IsNull(this.tablebebidas_alcoolicas.tipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SettipoNull() {
+                this[this.tablebebidas_alcoolicas.tipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnaturalidadeNull() {
+                return this.IsNull(this.tablebebidas_alcoolicas.naturalidadeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnaturalidadeNull() {
+                this[this.tablebebidas_alcoolicas.naturalidadeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3684,17 +3681,6 @@ namespace Garrafeira {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bebidas_alcoolicasRow[] Getbebidas_alcoolicasRows() {
-                if ((this.Table.ChildRelations["FK__bebidas_a__garra__4589517F"] == null)) {
-                    return new bebidas_alcoolicasRow[0];
-                }
-                else {
-                    return ((bebidas_alcoolicasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__bebidas_a__garra__4589517F"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public encomenda_garrafeiraRow[] Getencomenda_garrafeiraRows() {
                 if ((this.Table.ChildRelations["FK__encomenda__garra__4F12BBB9"] == null)) {
                     return new encomenda_garrafeiraRow[0];
@@ -4206,66 +4192,68 @@ namespace Garrafeira.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "bebidas_alcoolicas";
-            tableMapping.ColumnMappings.Add("codigo", "codigo");
-            tableMapping.ColumnMappings.Add("garrafeira_nif", "garrafeira_nif");
             tableMapping.ColumnMappings.Add("marca", "marca");
             tableMapping.ColumnMappings.Add("teor", "teor");
-            tableMapping.ColumnMappings.Add("iva", "iva");
             tableMapping.ColumnMappings.Add("stock", "stock");
             tableMapping.ColumnMappings.Add("litragem", "litragem");
+            tableMapping.ColumnMappings.Add("nome", "nome");
+            tableMapping.ColumnMappings.Add("tipo", "tipo");
+            tableMapping.ColumnMappings.Add("naturalidade", "naturalidade");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[bebidas_alcoolicas] WHERE (([codigo] = @Original_codigo) AND ([garrafeira_nif] = @Original_garrafeira_nif) AND ((@IsNull_marca = 1 AND [marca] IS NULL) OR ([marca] = @Original_marca)) AND ((@IsNull_teor = 1 AND [teor] IS NULL) OR ([teor] = @Original_teor)) AND ((@IsNull_iva = 1 AND [iva] IS NULL) OR ([iva] = @Original_iva)) AND ((@IsNull_stock = 1 AND [stock] IS NULL) OR ([stock] = @Original_stock)) AND ((@IsNull_litragem = 1 AND [litragem] IS NULL) OR ([litragem] = @Original_litragem)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [bebidas_alcoolicas] WHERE (((@IsNull_marca = 1 AND [marca] IS NULL) OR ([marca] = @Original_marca)) AND ((@IsNull_teor = 1 AND [teor] IS NULL) OR ([teor] = @Original_teor)) AND ((@IsNull_stock = 1 AND [stock] IS NULL) OR ([stock] = @Original_stock)) AND ((@IsNull_litragem = 1 AND [litragem] IS NULL) OR ([litragem] = @Original_litragem)) AND ((@IsNull_naturalidade = 1 AND [naturalidade] IS NULL) OR ([naturalidade] = @Original_naturalidade)) AND ([nome] = @Original_nome) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_garrafeira_nif", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garrafeira_nif", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_teor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "teor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_teor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "teor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_iva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iva", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iva", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stock", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stock", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_litragem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "litragem", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_litragem", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "litragem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_naturalidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naturalidade", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_naturalidade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naturalidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[bebidas_alcoolicas] ([codigo], [garrafeira_nif], [marca], [teor], [iva], [stock], [litragem]) VALUES (@codigo, @garrafeira_nif, @marca, @teor, @iva, @stock, @litragem);
-SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_alcoolicas WHERE (codigo = @codigo) AND (garrafeira_nif = @garrafeira_nif)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [bebidas_alcoolicas] ([marca], [teor], [stock], [litragem], [naturalidade], [nome], [tipo]) VALUES (@marca, @teor, @stock, @litragem, @naturalidade, @nome, @tipo);
+SELECT marca, teor, stock, litragem, naturalidade, nome, tipo FROM bebidas_alcoolicas WHERE (nome = @nome)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@garrafeira_nif", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garrafeira_nif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@teor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "teor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iva", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@litragem", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "litragem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naturalidade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naturalidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[bebidas_alcoolicas] SET [codigo] = @codigo, [garrafeira_nif] = @garrafeira_nif, [marca] = @marca, [teor] = @teor, [iva] = @iva, [stock] = @stock, [litragem] = @litragem WHERE (([codigo] = @Original_codigo) AND ([garrafeira_nif] = @Original_garrafeira_nif) AND ((@IsNull_marca = 1 AND [marca] IS NULL) OR ([marca] = @Original_marca)) AND ((@IsNull_teor = 1 AND [teor] IS NULL) OR ([teor] = @Original_teor)) AND ((@IsNull_iva = 1 AND [iva] IS NULL) OR ([iva] = @Original_iva)) AND ((@IsNull_stock = 1 AND [stock] IS NULL) OR ([stock] = @Original_stock)) AND ((@IsNull_litragem = 1 AND [litragem] IS NULL) OR ([litragem] = @Original_litragem)));
-SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_alcoolicas WHERE (codigo = @codigo) AND (garrafeira_nif = @garrafeira_nif)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [bebidas_alcoolicas] SET [marca] = @marca, [teor] = @teor, [stock] = @stock, [litragem] = @litragem, [naturalidade] = @naturalidade, [nome] = @nome, [tipo] = @tipo WHERE (((@IsNull_marca = 1 AND [marca] IS NULL) OR ([marca] = @Original_marca)) AND ((@IsNull_teor = 1 AND [teor] IS NULL) OR ([teor] = @Original_teor)) AND ((@IsNull_stock = 1 AND [stock] IS NULL) OR ([stock] = @Original_stock)) AND ((@IsNull_litragem = 1 AND [litragem] IS NULL) OR ([litragem] = @Original_litragem)) AND ((@IsNull_naturalidade = 1 AND [naturalidade] IS NULL) OR ([naturalidade] = @Original_naturalidade)) AND ([nome] = @Original_nome) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)));
+SELECT marca, teor, stock, litragem, naturalidade, nome, tipo FROM bebidas_alcoolicas WHERE (nome = @nome)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@garrafeira_nif", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garrafeira_nif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@teor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "teor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iva", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@litragem", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "litragem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_garrafeira_nif", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garrafeira_nif", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naturalidade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naturalidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_teor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "teor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_teor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "teor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_iva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iva", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iva", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stock", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stock", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_litragem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "litragem", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_litragem", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "litragem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_naturalidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naturalidade", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_naturalidade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naturalidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4281,8 +4269,8 @@ SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_al
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM dbo.bebidas" +
-                "_alcoolicas";
+            this._commandCollection[0].CommandText = "SELECT marca, teor, stock, litragem, naturalidade, nome, tipo FROM bebidas_alcool" +
+                "icas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4343,48 +4331,60 @@ SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_al
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_codigo, int Original_garrafeira_nif, string Original_marca, global::System.Nullable<double> Original_teor, global::System.Nullable<double> Original_iva, global::System.Nullable<int> Original_stock, global::System.Nullable<double> Original_litragem) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_codigo));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_garrafeira_nif));
+        public virtual int Delete(string Original_marca, global::System.Nullable<double> Original_teor, global::System.Nullable<int> Original_stock, global::System.Nullable<double> Original_litragem, string Original_naturalidade, string Original_nome, string Original_tipo) {
             if ((Original_marca == null)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_marca));
+            }
+            if ((Original_teor.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(Original_teor.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_marca));
-            }
-            if ((Original_teor.HasValue == true)) {
+            if ((Original_stock.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_teor.Value));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_stock.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_iva.HasValue == true)) {
+            if ((Original_litragem.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((double)(Original_iva.Value));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((double)(Original_litragem.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_stock.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_stock.Value));
-            }
-            else {
+            if ((Original_naturalidade == null)) {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_litragem.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((double)(Original_litragem.Value));
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_naturalidade));
+            }
+            if ((Original_nome == null)) {
+                throw new global::System.ArgumentNullException("Original_nome");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_nome));
+            }
+            if ((Original_tipo == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_tipo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4406,38 +4406,48 @@ SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_al
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int codigo, int garrafeira_nif, string marca, global::System.Nullable<double> teor, global::System.Nullable<double> iva, global::System.Nullable<int> stock, global::System.Nullable<double> litragem) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(codigo));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(garrafeira_nif));
+        public virtual int Insert(string marca, global::System.Nullable<double> teor, global::System.Nullable<int> stock, global::System.Nullable<double> litragem, string naturalidade, string nome, string tipo) {
             if ((marca == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(marca));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(marca));
             }
             if ((teor.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(teor.Value));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((double)(teor.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((stock.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(stock.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((litragem.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(litragem.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((iva.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(iva.Value));
-            }
-            else {
+            if ((naturalidade == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((stock.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(stock.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(naturalidade));
+            }
+            if ((nome == null)) {
+                throw new global::System.ArgumentNullException("nome");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(nome));
             }
-            if ((litragem.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(litragem.Value));
-            }
-            else {
+            if ((tipo == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(tipo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4459,80 +4469,102 @@ SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_al
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int codigo, int garrafeira_nif, string marca, global::System.Nullable<double> teor, global::System.Nullable<double> iva, global::System.Nullable<int> stock, global::System.Nullable<double> litragem, int Original_codigo, int Original_garrafeira_nif, string Original_marca, global::System.Nullable<double> Original_teor, global::System.Nullable<double> Original_iva, global::System.Nullable<int> Original_stock, global::System.Nullable<double> Original_litragem) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(codigo));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(garrafeira_nif));
+        public virtual int Update(string marca, global::System.Nullable<double> teor, global::System.Nullable<int> stock, global::System.Nullable<double> litragem, string naturalidade, string nome, string tipo, string Original_marca, global::System.Nullable<double> Original_teor, global::System.Nullable<int> Original_stock, global::System.Nullable<double> Original_litragem, string Original_naturalidade, string Original_nome, string Original_tipo) {
             if ((marca == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(marca));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(marca));
             }
             if ((teor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(teor.Value));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((double)(teor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((stock.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(stock.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((litragem.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(litragem.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((iva.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(iva.Value));
-            }
-            else {
+            if ((naturalidade == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((stock.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(stock.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(naturalidade));
+            }
+            if ((nome == null)) {
+                throw new global::System.ArgumentNullException("nome");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(nome));
             }
-            if ((litragem.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(litragem.Value));
-            }
-            else {
+            if ((tipo == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_codigo));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_garrafeira_nif));
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(tipo));
+            }
             if ((Original_marca == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_marca));
+            }
+            if ((Original_teor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_teor.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_marca));
-            }
-            if ((Original_teor.HasValue == true)) {
+            if ((Original_stock.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_teor.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_stock.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_iva.HasValue == true)) {
+            if ((Original_litragem.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_iva.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_litragem.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_stock.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_stock.Value));
-            }
-            else {
+            if ((Original_naturalidade == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_litragem.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Original_litragem.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_naturalidade));
+            }
+            if ((Original_nome == null)) {
+                throw new global::System.ArgumentNullException("Original_nome");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_nome));
+            }
+            if ((Original_tipo == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_tipo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4554,8 +4586,8 @@ SELECT codigo, garrafeira_nif, marca, teor, iva, stock, litragem FROM bebidas_al
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string marca, global::System.Nullable<double> teor, global::System.Nullable<double> iva, global::System.Nullable<int> stock, global::System.Nullable<double> litragem, int Original_codigo, int Original_garrafeira_nif, string Original_marca, global::System.Nullable<double> Original_teor, global::System.Nullable<double> Original_iva, global::System.Nullable<int> Original_stock, global::System.Nullable<double> Original_litragem) {
-            return this.Update(Original_codigo, Original_garrafeira_nif, marca, teor, iva, stock, litragem, Original_codigo, Original_garrafeira_nif, Original_marca, Original_teor, Original_iva, Original_stock, Original_litragem);
+        public virtual int Update(string marca, global::System.Nullable<double> teor, global::System.Nullable<int> stock, global::System.Nullable<double> litragem, string naturalidade, string tipo, string Original_marca, global::System.Nullable<double> Original_teor, global::System.Nullable<int> Original_stock, global::System.Nullable<double> Original_litragem, string Original_naturalidade, string Original_nome, string Original_tipo) {
+            return this.Update(marca, teor, stock, litragem, naturalidade, Original_nome, tipo, Original_marca, Original_teor, Original_stock, Original_litragem, Original_naturalidade, Original_nome, Original_tipo);
         }
     }
     
