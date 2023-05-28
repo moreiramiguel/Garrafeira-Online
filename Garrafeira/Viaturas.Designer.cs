@@ -32,9 +32,9 @@ namespace Garrafeira
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,9 +72,9 @@ namespace Garrafeira
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.richTextBox1);
-            this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
@@ -86,6 +86,14 @@ namespace Garrafeira
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Adicionar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(26, 125);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(75, 21);
+            this.comboBox1.TabIndex = 15;
             // 
             // label3
             // 
@@ -104,18 +112,6 @@ namespace Garrafeira
             this.richTextBox1.TabIndex = 13;
             this.richTextBox1.Text = "";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Camião",
-            "Carrinha",
-            "Carro"});
-            this.listBox1.Location = new System.Drawing.Point(26, 112);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(100, 43);
-            this.listBox1.TabIndex = 12;
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(859, 362);
@@ -124,6 +120,7 @@ namespace Garrafeira
             this.button6.TabIndex = 11;
             this.button6.Text = "Adicionar Viatura";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label2
             // 
@@ -236,7 +233,6 @@ namespace Garrafeira
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -249,5 +245,6 @@ namespace Garrafeira
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
