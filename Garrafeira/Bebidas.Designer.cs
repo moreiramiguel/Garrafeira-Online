@@ -73,6 +73,7 @@ namespace Garrafeira
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +85,7 @@ namespace Garrafeira
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
@@ -511,6 +513,16 @@ namespace Garrafeira
             this.textBox3.Size = new System.Drawing.Size(159, 20);
             this.textBox3.TabIndex = 5;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(656, 19);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(124, 50);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Encomendas";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Bebidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,5 +591,6 @@ namespace Garrafeira
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button8;
     }
 }

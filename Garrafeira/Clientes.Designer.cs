@@ -44,6 +44,7 @@ namespace Garrafeira
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -190,6 +191,7 @@ namespace Garrafeira
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
@@ -201,6 +203,16 @@ namespace Garrafeira
             this.groupBox1.Size = new System.Drawing.Size(995, 79);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(656, 19);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(124, 50);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Encomendas";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button4
             // 
@@ -291,5 +303,6 @@ namespace Garrafeira
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button8;
     }
 }

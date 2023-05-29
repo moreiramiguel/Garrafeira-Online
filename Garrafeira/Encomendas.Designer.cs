@@ -1,7 +1,7 @@
 ﻿
 namespace Garrafeira
 {
-    partial class Empregados
+    partial class Encomendas
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,10 @@ namespace Garrafeira
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(995, 79);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
             // button8
@@ -59,7 +58,7 @@ namespace Garrafeira
             this.button8.Location = new System.Drawing.Point(656, 19);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(124, 50);
-            this.button8.TabIndex = 7;
+            this.button8.TabIndex = 6;
             this.button8.Text = "Encomendas";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -114,14 +113,14 @@ namespace Garrafeira
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Empregados
+            // Encomendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 543);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Empregados";
-            this.Text = "Opçoes";
+            this.Name = "Encomendas";
+            this.Text = "Encomendas";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -130,11 +129,11 @@ namespace Garrafeira
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button8;
     }
 }

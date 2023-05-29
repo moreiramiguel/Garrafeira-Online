@@ -46,3 +46,4 @@ C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.pdb
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Login.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Empregados.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Encomendas.resources

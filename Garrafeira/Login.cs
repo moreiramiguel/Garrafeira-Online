@@ -31,6 +31,7 @@ namespace Garrafeira
             string ManagerID = textBox1.Text;
             string Password = textBox2.Text;
 
+
             if (validateUser(ManagerID, Password))
             {
 
@@ -74,6 +75,11 @@ namespace Garrafeira
                     return false;
                 }
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = true;
         }
     }
     }

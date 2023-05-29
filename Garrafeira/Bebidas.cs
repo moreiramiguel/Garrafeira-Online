@@ -198,6 +198,12 @@ namespace Garrafeira
             }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas encomendas = new Encomendas();
+            encomendas.Show();
+        }
     }
   }
 
