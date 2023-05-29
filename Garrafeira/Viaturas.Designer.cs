@@ -90,6 +90,11 @@ namespace Garrafeira
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Camião",
+            "Carrinha",
+            "Carro",
+            "Moto"});
             this.comboBox1.Location = new System.Drawing.Point(26, 125);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(75, 21);

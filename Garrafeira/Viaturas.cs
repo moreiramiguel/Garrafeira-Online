@@ -34,7 +34,7 @@ namespace Garrafeira
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            string ConnectionString = @"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;Initial Catalog=Viaturas_Garrafeira;Persist Security Info=True;User Id=p7g9";
+            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
             string sql = "SELECT * FROM Viaturas_Garrafeira";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -99,12 +99,12 @@ namespace Garrafeira
         private void button6_Click(object sender, EventArgs e)
         {
             string ViaturaMatricula = textBox2.Text;
-            string ViaturaType = comboBox1.SelectedText;
+            object ViaturaType = comboBox1.SelectedItem;
             string ViaturaDescription = richTextBox1.Text;
 
             if (VerifyViatura(ViaturaMatricula))
             {
-                if (InsertViatura(ViaturaDescription, ViaturaType, ViaturaDescription))
+                if (InsertViatura(ViaturaMatricula, ViaturaType, ViaturaDescription))
                 {
                     Console.WriteLine("Viatura adicionada com sucesso.");
                     Console.ReadLine();
@@ -117,19 +117,19 @@ namespace Garrafeira
             Console.ReadLine();
         }
 
-        private bool InsertViatura(string ViaturaMatricula, string ViaturaType, string ViaturaDescription)
+        private bool InsertViatura(string ViaturaMatricula, object ViaturaType, string ViaturaDescription)
         {
-            string ConnectionString = @"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;User ID=p7g9;Password=Ovosmoles123.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=Viaturas_Garrafeira";
+            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sql = "INSERT INTO Viaturas_Garrafeira(matricula, descricao, viatura_tipo) VALUES (@ViaturaMatricula,@ViaturaDescription, @ViaturaType)";
+                string sql = "INSERT INTO Viaturas_Garrafeira(matricula, tipo, descricao) VALUES (@ViaturaMatricula,@ViaturaType, @ViaturaDescription)";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@ViaturaMatricula", ViaturaMatricula);
-                command.Parameters.AddWithValue("@ViaturaDescription", ViaturaDescription);
                 command.Parameters.AddWithValue("@ViaturaType", ViaturaType);
+                command.Parameters.AddWithValue("@ViaturaDescription", ViaturaDescription);
 
                 int rowsAffected = command.ExecuteNonQuery();
 
@@ -146,7 +146,7 @@ namespace Garrafeira
 
         private bool VerifyViatura(string ViaturaMatricula)
         {
-            string ConnectionString = @"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;User ID=p7g9;Password=Ovosmoles123.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=Viaturas_Garrafeira";
+            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {

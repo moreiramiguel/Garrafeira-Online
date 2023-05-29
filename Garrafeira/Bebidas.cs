@@ -65,7 +65,7 @@ namespace Garrafeira
 
         private void tabPage1_Click(object snender, EventArgs e)
         {
-            string ConnectionString = @"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;Initial Catalog=bebidas_alcoolicas;Persist Security Info=True;User Id=p7g9";
+            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
             string sql = "SELECT * FROM bebidas_alcoolicas";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -93,10 +93,10 @@ namespace Garrafeira
             string BebidaName = textBox3.Text;
             object BebidaType = comboBox1.SelectedItem;
             string BebidaCountry = textBox1.Text;
-            float BebidaLitragem = numericUpDown1.DecimalPlaces;
-            int BebidaStock = numericUpDown3.DecimalPlaces;
-            float BebidaPrice = numericUpDown4.DecimalPlaces;
-            float BebidaAlcool = numericUpDown2.DecimalPlaces;
+            string BebidaLitragem = textBox4.Text + comboBox4.SelectedItem;
+            string BebidaStock = textBox5.Text;
+            string BebidaPrice = textBox6.Text;
+            string BebidaAlcool = textBox7.Text;
 
 
             if (VerifyBebida(BebidaName))
@@ -113,9 +113,9 @@ namespace Garrafeira
             }
             Console.ReadLine();
         }
-        private bool InsertBebida(string BebidaBrand,string BebidaName,object BebidaType,string BebidaCountry,float BebidaLitragem,int BebidaStock, float BebidaPrice, float BebidaAlcool)
+        private bool InsertBebida(string BebidaBrand,string BebidaName,object BebidaType,string BebidaCountry, string BebidaLitragem, string BebidaStock, string BebidaPrice, string BebidaAlcool)
         {
-            string ConnectionString = @"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;User ID=p7g9;Password=Ovosmoles123.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=Viaturas_Garrafeira";
+            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -141,6 +141,34 @@ namespace Garrafeira
                 else
                 {
                     return false;
+                }
+            }
+        }
+
+        public bool VerifyBebida(string BebidaName)
+        {
+            string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT nome FROM bebidas_alcoolicas WHERE nome = @BebidaName";
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@BebidaName", BebidaName);
+
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+
+                    return false;
+                }
+                else
+                {
+
+                    return true;
+
                 }
             }
         }
