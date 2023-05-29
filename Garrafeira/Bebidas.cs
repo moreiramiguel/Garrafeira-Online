@@ -17,6 +17,56 @@ namespace Garrafeira
         {
             InitializeComponent();
         }
+        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd;
+
+        private void Bebidas_Controler(object sender, EventArgs e)
+        {
+
+            //ComboBox2
+            string sqlbox2 = "SELECT * FROM Fornecedores_garrafeira";
+            cmd = new SqlCommand(sqlbox2, connect);
+            connect.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox2.Items.Add(dr["nome"]);
+            }
+            connect.Close();
+
+            //ComboBox3
+            string sqlBebidas = "SELECT * FROM bebidas_alcoolicas";
+            cmd = new SqlCommand(sqlBebidas, connect);
+            connect.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox3.Items.Add(dr["marca"]);
+            }
+            connect.Close();
+
+            //Lista
+            
+            cmd = new SqlCommand(sqlBebidas, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlBebidas, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
+
+        }
+        private void comboBox2_ShowItems(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -65,26 +115,7 @@ namespace Garrafeira
 
         private void tabPage1_Click(object snender, EventArgs e)
         {
-            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-            string sql = "SELECT * FROM bebidas_alcoolicas";
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                DataGrid dataGrid = new DataGrid();
-                dataGrid.DataSource = dataTable;
-
-                tabPage1.Controls.Add(dataGrid);
-                dataGrid.Width = 500;
-                dataGrid.Height = 300;
-
-
-            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -112,7 +143,18 @@ namespace Garrafeira
                 }
             }
             Console.ReadLine();
+            
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string FornecedorFornSem = textBox8.Text;
+            string FornecedorFornDesc = richTextBox1.Text;
+
+
+        }
+
+
         private bool InsertBebida(string BebidaBrand,string BebidaName,object BebidaType,string BebidaCountry, string BebidaLitragem, string BebidaStock, string BebidaPrice, string BebidaAlcool)
         {
             string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
@@ -122,17 +164,17 @@ namespace Garrafeira
                 connection.Open();
 
                 string sql = "INSERT INTO bebidas_alcoolicas(marca,nome,tipo,naturalidade,litragem,stock,price,teor) VALUES (@BebidaBrand, @BebidaName, @BebidaType, @BebidaCountry, @BebidaLitragem, @BebidaStock, @BebidaPrice, @BebidaAlcool)";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@BebidaBrand", BebidaBrand);
-                command.Parameters.AddWithValue("@BebidaName", BebidaName);
-                command.Parameters.AddWithValue("@BebidaType", BebidaType);
-                command.Parameters.AddWithValue("@BebidaCountry", BebidaCountry);
-                command.Parameters.AddWithValue("@BebidaLitragem", BebidaLitragem);
-                command.Parameters.AddWithValue("@BebidaStock", BebidaStock);
-                command.Parameters.AddWithValue("@BebidaPrice", BebidaPrice);
-                command.Parameters.AddWithValue("@BebidaAlcool", BebidaAlcool);
+                cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@BebidaBrand", BebidaBrand);
+                cmd.Parameters.AddWithValue("@BebidaName", BebidaName);
+                cmd.Parameters.AddWithValue("@BebidaType", BebidaType);
+                cmd.Parameters.AddWithValue("@BebidaCountry", BebidaCountry);
+                cmd.Parameters.AddWithValue("@BebidaLitragem", BebidaLitragem);
+                cmd.Parameters.AddWithValue("@BebidaStock", BebidaStock);
+                cmd.Parameters.AddWithValue("@BebidaPrice", BebidaPrice);
+                cmd.Parameters.AddWithValue("@BebidaAlcool", BebidaAlcool);
 
-                int rowsAffected = command.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
                 {
@@ -154,10 +196,10 @@ namespace Garrafeira
                 connection.Open();
 
                 string sql = "SELECT nome FROM bebidas_alcoolicas WHERE nome = @BebidaName";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@BebidaName", BebidaName);
+                cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@BebidaName", BebidaName);
 
-                object result = command.ExecuteScalar();
+                object result = cmd.ExecuteScalar();
 
                 if (result != null)
                 {
@@ -172,6 +214,8 @@ namespace Garrafeira
                 }
             }
         }
+
+
     }
   }
 
