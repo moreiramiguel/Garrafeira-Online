@@ -21,7 +21,6 @@ C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Bebidas.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Clientes.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Form1.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Fornecedores.resources
-C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Opçoes.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Properties.Resources.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Viaturas.resources
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.csproj.GenerateResource.cache
@@ -45,3 +44,5 @@ C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.exe
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.pdb
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Login.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Empregados.resources

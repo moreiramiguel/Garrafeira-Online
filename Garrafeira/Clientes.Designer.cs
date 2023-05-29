@@ -218,7 +218,7 @@ namespace Garrafeira
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Opções";
+            this.button5.Text = "Empregados";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -261,6 +261,7 @@ namespace Garrafeira
             this.Controls.Add(this.tabControl1);
             this.Name = "Clientes";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.Clientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();

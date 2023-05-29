@@ -80,9 +80,10 @@ namespace Garrafeira
             // 
             this.button5.Location = new System.Drawing.Point(526, 19);
             this.button5.Name = "button5";
+            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Opções";
+            this.button5.Text = "Empregados";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 

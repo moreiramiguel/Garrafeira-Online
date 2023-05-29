@@ -1,7 +1,7 @@
 ﻿
 namespace Garrafeira
 {
-    partial class Opçoes
+    partial class Empregados
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@ namespace Garrafeira
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Opções";
+            this.button5.Text = "Empregados";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -102,13 +102,13 @@ namespace Garrafeira
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Opçoes
+            // Empregados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 543);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Opçoes";
+            this.Name = "Empregados";
             this.Text = "Opçoes";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

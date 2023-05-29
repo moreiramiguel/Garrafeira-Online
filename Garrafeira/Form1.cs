@@ -58,7 +58,7 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Opçoes opcoes = new Opçoes();
+            Empregados opcoes = new Empregados();
             opcoes.Show();
         }
 
