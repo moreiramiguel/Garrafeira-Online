@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Garrafeira
 {
-    public partial class Form2 : Form
+    public partial class SucessoForm : Form
     {
-        public Form2()
+        public SucessoForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

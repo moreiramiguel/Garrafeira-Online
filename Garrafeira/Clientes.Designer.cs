@@ -49,6 +49,7 @@ namespace Garrafeira
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -190,6 +191,7 @@ namespace Garrafeira
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
@@ -218,7 +220,7 @@ namespace Garrafeira
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Opções";
+            this.button5.Text = "Empregados";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -251,6 +253,15 @@ namespace Garrafeira
             this.button2.Text = "Clientes";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(656, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(124, 50);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Encomendas";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // Clientes
             // 
@@ -290,5 +301,6 @@ namespace Garrafeira
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button7;
     }
 }

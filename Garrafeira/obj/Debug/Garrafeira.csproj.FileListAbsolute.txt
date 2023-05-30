@@ -45,3 +45,11 @@ C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.exe
 C:\Users\ASUS\Documents\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.pdb
+<<<<<<< Updated upstream
+=======
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Login.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Empregados.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Encomendas.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.SucessoForm.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.ErrorForm.resources
+>>>>>>> Stashed changes

@@ -55,7 +55,7 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Opçoes opcoes = new Opçoes();
+            Empregados opcoes = new Empregados();
             opcoes.Show();
         }
 
@@ -96,13 +96,15 @@ namespace Garrafeira
             {
                 if (insertFornecedores(FornecedorNIF, FornecedorPhone, FornecedorName, imageBytes))
                 {
-                    MessageBox.Show("Fornecedor adicionado");
+                    SucessoForm sf = new SucessoForm();
+                    sf.Show();
                 }
 
             }
             else
             {
-                MessageBox.Show("O Forncedor já se encontra na Base de Dados");
+                ErrorForm ef = new ErrorForm();
+                ef.Show();
             }
 
         }

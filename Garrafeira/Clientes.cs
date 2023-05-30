@@ -67,12 +67,13 @@ namespace Garrafeira
             {
                 if (InsertClient(ClientName, ClientEmail, ClientPhone, ClientNIF, ClientAddress))
                 {
-                    Console.WriteLine("Cliente adicionado com sucesso.");
-                    Console.ReadLine();
+                    SucessoForm sf = new SucessoForm();
+                    sf.Show();
                 }
                 else
                 {
-                    Console.WriteLine("Erro ao adicionar cliente.");
+                    ErrorForm ef = new ErrorForm();
+                    ef.Show();
                 }
             }
             Console.ReadLine();
@@ -182,8 +183,8 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Opçoes opcoes = new Opçoes();
-            opcoes.Show();
+            Empregados empregados = new Empregados();
+            empregados.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

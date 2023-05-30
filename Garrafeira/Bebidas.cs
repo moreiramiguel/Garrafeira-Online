@@ -49,8 +49,8 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Opçoes opcoes = new Opçoes();
-            opcoes.Show();
+            Empregados empregados = new Empregados();
+            empregados.Show();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -103,12 +103,13 @@ namespace Garrafeira
             {
                 if (InsertBebida(BebidaBrand, BebidaName, BebidaType, BebidaCountry, BebidaLitragem, BebidaStock, BebidaPrice, BebidaAlcool))
                 {
-                    Console.WriteLine("Viatura adicionada com sucesso.");
-                    Console.ReadLine();
+                    SucessoForm sf = new SucessoForm();
+                    sf.Show();
                 }
                 else
                 {
-                    Console.WriteLine("Erro ao adicionar a viatura.");
+                    ErrorForm ef = new ErrorForm();
+                    ef.Show();
                 }
             }
             Console.ReadLine();
