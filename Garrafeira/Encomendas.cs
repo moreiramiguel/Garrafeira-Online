@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Garrafeira
 {
-    public partial class Form1 : Form
+    public partial class Encomendas : Form
     {
-        public Form1()
+        public Encomendas()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,18 +31,18 @@ namespace Garrafeira
             clientes.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Viaturas viaturas = new Viaturas();
-            viaturas.Show();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
             Fornecedores fornecedores = new Fornecedores();
             fornecedores.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Viaturas viaturas = new Viaturas();
+            viaturas.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -64,9 +54,7 @@ namespace Garrafeira
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Encomendas encomendas = new Encomendas();
-            encomendas.Show();
+
         }
     }
 }

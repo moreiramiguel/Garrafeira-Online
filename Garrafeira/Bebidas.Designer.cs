@@ -52,6 +52,11 @@ namespace Garrafeira
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label9 = new System.Windows.Forms.Label();
@@ -68,11 +73,7 @@ namespace Garrafeira
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +85,7 @@ namespace Garrafeira
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
@@ -112,7 +114,7 @@ namespace Garrafeira
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Opções";
+            this.button5.Text = "Empregados";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -324,6 +326,48 @@ namespace Garrafeira
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(123, 309);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(52, 20);
+            this.textBox7.TabIndex = 28;
+            this.textBox7.Tag = "%";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(123, 258);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(52, 20);
+            this.textBox6.TabIndex = 27;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(123, 211);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(52, 20);
+            this.textBox5.TabIndex = 26;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "L",
+            "dl",
+            "cl",
+            "ml"});
+            this.comboBox4.Location = new System.Drawing.Point(181, 166);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(30, 21);
+            this.comboBox4.TabIndex = 25;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(123, 166);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(52, 20);
+            this.textBox4.TabIndex = 24;
+            // 
             // treeView1
             // 
             this.treeView1.ImageIndex = 0;
@@ -469,47 +513,15 @@ namespace Garrafeira
             this.textBox3.Size = new System.Drawing.Size(159, 20);
             this.textBox3.TabIndex = 5;
             // 
-            // textBox4
+            // button8
             // 
-            this.textBox4.Location = new System.Drawing.Point(123, 166);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(52, 20);
-            this.textBox4.TabIndex = 24;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "L",
-            "dl",
-            "cl",
-            "ml"});
-            this.comboBox4.Location = new System.Drawing.Point(181, 166);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(30, 21);
-            this.comboBox4.TabIndex = 25;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(123, 211);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(52, 20);
-            this.textBox5.TabIndex = 26;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(123, 258);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(52, 20);
-            this.textBox6.TabIndex = 27;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(123, 309);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(52, 20);
-            this.textBox7.TabIndex = 28;
-            this.textBox7.Tag = "%";
+            this.button8.Location = new System.Drawing.Point(656, 19);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(124, 50);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Encomendas";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Bebidas
             // 
@@ -520,6 +532,7 @@ namespace Garrafeira
             this.Controls.Add(this.groupBox1);
             this.Name = "Bebidas";
             this.Text = "Bebidas";
+            this.Load += new System.EventHandler(this.Bebidas_Controler);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -578,5 +591,6 @@ namespace Garrafeira
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button8;
     }
 }

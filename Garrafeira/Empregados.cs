@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Garrafeira
 {
-    public partial class Opçoes : Form
+    public partial class Empregados : Form
     {
-        public Opçoes()
+        public Empregados()
         {
             InitializeComponent();
         }
@@ -48,8 +48,15 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Opçoes opcoes = new Opçoes();
+            Empregados opcoes = new Empregados();
             opcoes.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas encomendas = new Encomendas();
+            encomendas.Show();
         }
     }
 }

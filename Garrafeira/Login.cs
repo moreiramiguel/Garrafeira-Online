@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Login : Form
@@ -17,7 +20,7 @@ namespace Garrafeira
         {
             InitializeComponent();
         }
-        private string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+        private string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -28,15 +31,20 @@ namespace Garrafeira
             string ManagerID = textBox1.Text;
             string Password = textBox2.Text;
 
+
             if (validateUser(ManagerID, Password))
             {
 
-
-
                 // Abra o formulário principal ou o próximo formulário
+                this.Hide();
                 Form1 formPrincipal = new Form1();
                 formPrincipal.Show();
+<<<<<<< HEAD
        
+=======
+
+
+>>>>>>> 7310c4dc630c5a2278ff59ffd43a33019eae5c54
             }
             else
             {
@@ -71,6 +79,11 @@ namespace Garrafeira
                     return false;
                 }
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = true;
         }
     }
     }

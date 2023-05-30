@@ -9,14 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Bebidas : Form
     {
+        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd;
         public Bebidas()
         {
             InitializeComponent();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -49,7 +56,7 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Opçoes opcoes = new Opçoes();
+            Empregados opcoes = new Empregados();
             opcoes.Show();
         }
 
@@ -63,28 +70,46 @@ namespace Garrafeira
 
         }
 
-        private void tabPage1_Click(object snender, EventArgs e)
+        private void Bebidas_Controler(object sender, EventArgs e)
         {
-            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-            string sql = "SELECT * FROM bebidas_alcoolicas";
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            //ComboBox2
+            string sqlbox2 = "SELECT * FROM Fornecedores_garrafeira";
+            cmd = new SqlCommand(sqlbox2, connect);
+            connect.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                DataGrid dataGrid = new DataGrid();
-                dataGrid.DataSource = dataTable;
-
-                tabPage1.Controls.Add(dataGrid);
-                dataGrid.Width = 500;
-                dataGrid.Height = 300;
-
-
+                comboBox2.Items.Add(dr["nome"]);
             }
+            connect.Close();
+
+            //ComboBox3
+            string sqlBebidas = "SELECT * FROM bebidas_alcoolicas";
+            cmd = new SqlCommand(sqlBebidas, connect);
+            connect.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox3.Items.Add(dr["marca"]);
+            }
+            connect.Close();
+
+            //Lista
+
+            cmd = new SqlCommand(sqlBebidas, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlBebidas, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -171,6 +196,13 @@ namespace Garrafeira
 
                 }
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas encomendas = new Encomendas();
+            encomendas.Show();
         }
     }
   }
