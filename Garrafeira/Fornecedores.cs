@@ -19,9 +19,25 @@ namespace Garrafeira
             InitializeComponent();
         }
 
+        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd;
+
         private void Fornecedores_Load(object sender, EventArgs e)
         {
+            string sqlFornecidores = "SELECT * FROM Fornecedores_garrafeira";
+            cmd = new SqlCommand(sqlFornecidores, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlFornecidores, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
 
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -195,6 +211,11 @@ namespace Garrafeira
                 dataGrid.Height = 300;
 
             }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

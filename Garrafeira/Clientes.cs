@@ -20,6 +20,9 @@ namespace Garrafeira
             InitializeComponent();
         }
 
+        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -135,29 +138,6 @@ namespace Garrafeira
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Clients;Integrated Security=True";
-            string sql = "SELECT * FROM Clients";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                DataGrid dataGrid = new DataGrid();
-                dataGrid.DataSource = dataTable;
-
-                tabPage1.Controls.Add(dataGrid);
-                dataGrid.Width = 500;
-                dataGrid.Height = 300; 
-  
-
-            }
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -192,6 +172,23 @@ namespace Garrafeira
             this.Hide();
             Viaturas viaturas = new Viaturas();
             viaturas.Show();
+        }
+
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+            string sqlClientes = "SELECT * FROM Clients";
+            cmd = new SqlCommand(sqlClientes, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
     }
 }

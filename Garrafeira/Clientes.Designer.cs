@@ -44,12 +44,12 @@ namespace Garrafeira
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -204,6 +204,15 @@ namespace Garrafeira
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(656, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(124, 50);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Encomendas";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(266, 19);
@@ -254,15 +263,6 @@ namespace Garrafeira
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(656, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(124, 50);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Encomendas";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +272,7 @@ namespace Garrafeira
             this.Controls.Add(this.tabControl1);
             this.Name = "Clientes";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.Clientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();

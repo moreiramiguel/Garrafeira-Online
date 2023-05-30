@@ -47,6 +47,7 @@ namespace Garrafeira
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -54,6 +55,7 @@ namespace Garrafeira
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
@@ -82,7 +84,7 @@ namespace Garrafeira
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Opções";
+            this.button5.Text = "Empregados";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -229,6 +231,16 @@ namespace Garrafeira
             this.textBox2.Size = new System.Drawing.Size(360, 20);
             this.textBox2.TabIndex = 1;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(656, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(124, 50);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Encomendas";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // Fornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,5 +279,6 @@ namespace Garrafeira
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Button button7;
     }
 }

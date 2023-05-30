@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Bebidas : Form
@@ -17,6 +20,10 @@ namespace Garrafeira
         {
             InitializeComponent();
         }
+
+        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -172,6 +179,23 @@ namespace Garrafeira
 
                 }
             }
+        }
+
+        private void Bebidas_Load(object sender, EventArgs e)
+        {
+            string sqlEmpregados = "SELECT * FROM bebidas_alcoolicas";
+            cmd = new SqlCommand(sqlEmpregados, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlEmpregados, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
     }
   }

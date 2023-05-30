@@ -18,6 +18,10 @@ namespace Garrafeira
             InitializeComponent();
         }
 
+        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd;
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -30,7 +34,19 @@ namespace Garrafeira
 
         private void Viaturas_Load(object sender, EventArgs e)
         {
+            string sqlViaturas = "SELECT * FROM Viaturas_Garrafeira";
+            cmd = new SqlCommand(sqlViaturas, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlViaturas, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
 
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
