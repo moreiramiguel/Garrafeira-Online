@@ -31,6 +31,7 @@ namespace Garrafeira
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace Garrafeira
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,17 +68,22 @@ namespace Garrafeira
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+<<<<<<< Updated upstream
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+=======
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+>>>>>>> Stashed changes
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +100,16 @@ namespace Garrafeira
             this.groupBox1.Size = new System.Drawing.Size(995, 79);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(656, 19);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(124, 50);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Encomendas";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button4
             // 
@@ -180,6 +195,9 @@ namespace Garrafeira
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.button7);
@@ -187,7 +205,6 @@ namespace Garrafeira
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.richTextBox1);
-            this.groupBox3.Controls.Add(this.numericUpDown5);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.label10);
@@ -210,13 +227,13 @@ namespace Garrafeira
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(38, 43);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.Size = new System.Drawing.Size(37, 13);
             this.label13.TabIndex = 28;
-            this.label13.Text = "Bebida";
+            this.label13.Text = "Marca";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(333, 178);
+            this.button7.Location = new System.Drawing.Point(333, 218);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(116, 60);
             this.button7.TabIndex = 24;
@@ -226,7 +243,7 @@ namespace Garrafeira
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 295);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 326);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(408, 86);
             this.dataGridView1.TabIndex = 27;
@@ -234,7 +251,7 @@ namespace Garrafeira
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(38, 268);
+            this.label14.Location = new System.Drawing.Point(38, 309);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 13);
             this.label14.TabIndex = 24;
@@ -243,7 +260,7 @@ namespace Garrafeira
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(38, 132);
+            this.label12.Location = new System.Drawing.Point(38, 189);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 26;
@@ -251,38 +268,25 @@ namespace Garrafeira
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(41, 166);
+            this.richTextBox1.Location = new System.Drawing.Point(41, 214);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(248, 76);
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.Text = "";
             // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.Location = new System.Drawing.Point(367, 125);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(82, 20);
-            this.numericUpDown5.TabIndex = 24;
-            this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown5.Value = new decimal(new int[] {
-            98,
-            0,
-            0,
-            0});
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(216, 127);
+            this.label11.Location = new System.Drawing.Point(295, 178);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 13);
+            this.label11.Size = new System.Drawing.Size(96, 13);
             this.label11.TabIndex = 24;
-            this.label11.Text = "Fornecimento(semanal)";
+            this.label11.Text = "Fornecimento(mes)";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(126, 85);
+            this.comboBox2.Location = new System.Drawing.Point(126, 138);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(323, 21);
             this.comboBox2.TabIndex = 24;
@@ -290,7 +294,7 @@ namespace Garrafeira
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(38, 88);
+            this.label10.Location = new System.Drawing.Point(38, 146);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 13);
             this.label10.TabIndex = 24;
@@ -469,6 +473,7 @@ namespace Garrafeira
             this.textBox3.Size = new System.Drawing.Size(159, 20);
             this.textBox3.TabIndex = 5;
             // 
+<<<<<<< Updated upstream
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(123, 166);
@@ -510,6 +515,31 @@ namespace Garrafeira
             this.textBox7.Size = new System.Drawing.Size(52, 20);
             this.textBox7.TabIndex = 28;
             this.textBox7.Tag = "%";
+=======
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 93);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Bebida";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(397, 175);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(52, 20);
+            this.textBox8.TabIndex = 29;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(126, 89);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(323, 20);
+            this.textBox9.TabIndex = 29;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+>>>>>>> Stashed changes
             // 
             // Bebidas
             // 
@@ -526,7 +556,6 @@ namespace Garrafeira
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -564,7 +593,6 @@ namespace Garrafeira
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
@@ -578,5 +606,12 @@ namespace Garrafeira
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox4;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox9;
+>>>>>>> Stashed changes
     }
 }
