@@ -82,6 +82,16 @@ namespace Garrafeira
             byte[] imageBytes = null;
 
 
+            OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Filter = "jpg files";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = dialog.FileName;
+                imageBytes = File.ReadAllBytes(imagePath);
+            }
+
+
             if (verifyFornecedor(FornecedorNIF))
             {
                 if (insertFornecedores(FornecedorNIF, FornecedorPhone, FornecedorName, imageBytes))
@@ -184,47 +194,5 @@ namespace Garrafeira
 
             }
         }
-
-        private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
-        {
-        
-
-        }
-        private void AtualizarImagemNoBancoDeDados(byte[] imagemBytes,String FornecedorNIF)
-        {
-            string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
-            string query = "UPDATE Fornecedores SET Image = @Imagem WHERE NIF = @FornecedorNIF";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Imagem", imagemBytes);
-                command.Parameters.AddWithValue("@FornecedorNIF", FornecedorNIF);
-
-                connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
-
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Arquivos de imagem (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
-            string FornecedorNIF = textBox3.Text;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string caminhoImagem = openFileDialog.FileName;
-                byte[] imagemBytes = File.ReadAllBytes(caminhoImagem);
-
-                // Chamar método para atualizar a imagem no banco de dados
-                AtualizarImagemNoBancoDeDados(imagemBytes, FornecedorNIF);
-                using (MemoryStream ms = new MemoryStream(imagemBytes))
-                {
-                    pictureBox1.Image = Image.FromStream(ms);
-                }
-            }
-        }
-
     }
 }

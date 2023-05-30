@@ -36,7 +36,7 @@ namespace Garrafeira
                 // Abra o formulário principal ou o próximo formulário
                 Form1 formPrincipal = new Form1();
                 formPrincipal.Show();
-       
+
             }
             else
             {
