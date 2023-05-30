@@ -105,7 +105,7 @@ namespace Garrafeira
                     return false;
                 }
             }
-        }
+            }
 
         private bool VerifyClient(string clientNIF)
         {

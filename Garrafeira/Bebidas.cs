@@ -172,24 +172,6 @@ namespace Garrafeira
                 }
             }
         }
-<<<<<<< Updated upstream
-=======
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Encomendas encomendas = new Encomendas();
-            encomendas.Show();
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-            string nomeBebida = "SELECT nome FROM bebidas_alcoolicas";
-            cmd = new SqlCommand(nomeBebida, connect);
-            cmd.Parameters.AddWithValue("@BebidasNome", textBox9.Text);
-
-        }
->>>>>>> Stashed changes
     }
   }
 
