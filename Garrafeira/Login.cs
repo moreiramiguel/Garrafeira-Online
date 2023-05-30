@@ -17,7 +17,7 @@ namespace Garrafeira
         {
             InitializeComponent();
         }
-        private string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+        private string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -36,6 +36,7 @@ namespace Garrafeira
                 // Abra o formulário principal ou o próximo formulário
                 Form1 formPrincipal = new Form1();
                 formPrincipal.Show();
+                this.Hide();
 
             }
             else
