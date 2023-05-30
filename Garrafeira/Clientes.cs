@@ -58,39 +58,16 @@ namespace Garrafeira
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string ClientName = textBox2.Text;
-            string ClientEmail = textBox1.Text;
-            string ClientPhone = textBox4.Text;
-            string ClientNIF = textBox3.Text;
-            string ClientAddress = textBox5.Text;
 
-            if (VerifyClient(ClientNIF))
-            {
-                if (InsertClient(ClientName, ClientEmail, ClientPhone, ClientNIF, ClientAddress))
-                {
-                    SucessoForm sf = new SucessoForm();
-                    sf.Show();
-                }
-                else
-                {
-                    ErrorForm ef = new ErrorForm();
-                    ef.Show();
-                }
-            }
-            Console.ReadLine();
-        }
-
-        private bool InsertClient(string clientName, string clientEmail, string clientPhone, string clientNIF, string clientAddress)
+        private bool InsertClient(string clientName, string clientEmail, object clientPhone, string clientNIF, string clientAddress)
         {
-            string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Clients;Integrated Security=True";
+            string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string sql = "INSERT INTO Clients (Name, Email, Phone, NIF, Adress) VALUES (@clientName, @clientEmail, @clientPhone, @clientNIF, @clientAddress)";
+                string sql = "INSERT INTO Clientes_garrafeira (nome, mail, metodo, NIF, morada) VALUES (@clientName, @clientEmail, @clientPhone, @clientNIF, @clientAddress)";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@clientName", clientName);
                 command.Parameters.AddWithValue("@clientEmail", clientEmail);
@@ -113,13 +90,13 @@ namespace Garrafeira
 
         private bool VerifyClient(string clientNIF)
         {
-            string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Clients;Integrated Security=True";
+            string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string sql = "SELECT NIF FROM Clients WHERE NIF = @clientNIF";
+                string sql = "SELECT NIF FROM Clientes_garrafeira WHERE NIF = @clientNIF";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@clientNIF", clientNIF);
 
@@ -176,7 +153,8 @@ namespace Garrafeira
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            string sqlClientes = "SELECT * FROM Clients";
+
+            string sqlClientes = "SELECT * FROM Clientes_garrafeira";
             cmd = new SqlCommand(sqlClientes, connect);
             connect.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
@@ -189,6 +167,30 @@ namespace Garrafeira
             tabPage1.Controls.Add(dataGrid);
             dataGrid.Width = 994;
             dataGrid.Height = 543;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string ClientName = textBox2.Text;
+            string ClientEmail = textBox1.Text;
+            object ClientPhone = comboBox1.SelectedItem;
+            string ClientNIF = textBox3.Text;
+            string ClientAddress = textBox5.Text;
+
+            if (VerifyClient(ClientNIF))
+            {
+                if (InsertClient(ClientName, ClientEmail, ClientPhone, ClientNIF, ClientAddress))
+                {
+                    SucessoForm sf = new SucessoForm();
+                    sf.Show();
+                }
+                else
+                {
+                    ErrorForm ef = new ErrorForm();
+                    ef.Show();
+                }
+            }
+            Console.ReadLine();
         }
     }
 }

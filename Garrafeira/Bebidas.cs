@@ -183,6 +183,28 @@ namespace Garrafeira
 
         private void Bebidas_Load(object sender, EventArgs e)
         {
+            //ComboBox2
+            string sqlbox2 = "SELECT * FROM Fornecedores_garrafeira";
+            cmd = new SqlCommand(sqlbox2, connect);
+            connect.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox2.Items.Add(dr["nome"]);
+            }
+            connect.Close();
+
+            //ComboBox3
+            string sqlBebidas = "SELECT * FROM bebidas_alcoolicas";
+            cmd = new SqlCommand(sqlBebidas, connect);
+            connect.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox3.Items.Add(dr["marca"]);
+            }
+            connect.Close();
+
             string sqlEmpregados = "SELECT * FROM bebidas_alcoolicas";
             cmd = new SqlCommand(sqlEmpregados, connect);
             connect.Open();
@@ -196,6 +218,9 @@ namespace Garrafeira
             tabPage1.Controls.Add(dataGrid);
             dataGrid.Width = 994;
             dataGrid.Height = 543;
+
+
+
         }
     }
   }
