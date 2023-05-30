@@ -10,9 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
-
 namespace Garrafeira
 {
     public partial class Fornecedores : Form
@@ -22,26 +19,9 @@ namespace Garrafeira
             InitializeComponent();
         }
 
-        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
-        SqlDataReader dr;
-        SqlCommand cmd;
-
-
         private void Fornecedores_Load(object sender, EventArgs e)
         {
-            string sqlFornecedores = "SELECT * FROM Fornecedores_garrafeira";
-            cmd = new SqlCommand(sqlFornecedores, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlFornecedores, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
 
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,7 +55,7 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados opcoes = new Empregados();
+            Opçoes opcoes = new Opçoes();
             opcoes.Show();
         }
 
@@ -205,7 +185,6 @@ namespace Garrafeira
             }
         }
 
-<<<<<<< HEAD
         private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
         {
         
@@ -247,13 +226,5 @@ namespace Garrafeira
             }
         }
 
-=======
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Encomendas encomendas = new Encomendas();
-            encomendas.Show();
-        }
->>>>>>> 7310c4dc630c5a2278ff59ffd43a33019eae5c54
     }
 }

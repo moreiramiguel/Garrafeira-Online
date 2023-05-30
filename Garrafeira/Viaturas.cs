@@ -9,16 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
-
 namespace Garrafeira
 {
     public partial class Viaturas : Form
     {
-        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
-        SqlDataReader dr;
-        SqlCommand cmd;
         public Viaturas()
         {
             InitializeComponent();
@@ -36,19 +30,30 @@ namespace Garrafeira
 
         private void Viaturas_Load(object sender, EventArgs e)
         {
-            string sqlViaturas = "SELECT * FROM Viaturas_Garrafeira";
-            cmd = new SqlCommand(sqlViaturas, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlViaturas, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
 
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
+        }
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+            string sql = "SELECT * FROM Viaturas_Garrafeira";
 
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                System.Data.DataTable dataTable = new System.Data.DataTable();
+                adapter.Fill(dataTable);
+
+                DataGrid dataGrid = new DataGrid();
+                dataGrid.DataSource = dataTable;
+
+                tabPage1.Controls.Add(dataGrid);
+                dataGrid.Width = 500;
+                dataGrid.Height = 300;
+
+
+            }
         }
 
         private void tabPage2_Click_1(object sender, EventArgs e)
@@ -87,7 +92,7 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados opcoes = new Empregados();
+            Opçoes opcoes = new Opçoes();
             opcoes.Show();
         }
 
@@ -164,13 +169,6 @@ namespace Garrafeira
                     return true;
                 }
             }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Encomendas encomendas = new Encomendas();
-            encomendas.Show();
         }
     }
 }

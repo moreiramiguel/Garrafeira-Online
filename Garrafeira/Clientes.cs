@@ -9,37 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
-
 namespace Garrafeira
 {
     public partial class Clientes : Form
     {
-        SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
-        SqlDataReader dr;
-        SqlCommand cmd;
+        private object dataGridView1;
 
         public Clientes()
         {
             InitializeComponent();
-        }
-        private void Clientes_Load(object sender, EventArgs e)
-        {
-            string sqlClientes = "SELECT * FROM cliente_garrafeira";
-            cmd = new SqlCommand(sqlClientes, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
-
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -108,7 +86,7 @@ namespace Garrafeira
             {
                 connection.Open();
 
-                string sql = "INSERT INTO cliente_garrafeira (Name, Email, Phone, NIF, Adress) VALUES (@clientName, @clientEmail, @clientPhone, @clientNIF, @clientAddress)";
+                string sql = "INSERT INTO Clients (Name, Email, Phone, NIF, Adress) VALUES (@clientName, @clientEmail, @clientPhone, @clientNIF, @clientAddress)";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@clientName", clientName);
                 command.Parameters.AddWithValue("@clientEmail", clientEmail);
@@ -137,7 +115,7 @@ namespace Garrafeira
             {
                 connection.Open();
 
-                string sql = "SELECT NIF FROM cliente_garrafeira WHERE NIF = @clientNIF";
+                string sql = "SELECT NIF FROM Clients WHERE NIF = @clientNIF";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@clientNIF", clientNIF);
 
@@ -153,6 +131,30 @@ namespace Garrafeira
                     Console.WriteLine("Cliente adicionado");
                     return true;
                 }
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Clients;Integrated Security=True";
+            string sql = "SELECT * FROM Clients";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                System.Data.DataTable dataTable = new System.Data.DataTable();
+                adapter.Fill(dataTable);
+
+                DataGrid dataGrid = new DataGrid();
+                dataGrid.DataSource = dataTable;
+
+                tabPage1.Controls.Add(dataGrid);
+                dataGrid.Width = 500;
+                dataGrid.Height = 300; 
+  
+
             }
         }
 
@@ -180,7 +182,7 @@ namespace Garrafeira
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados opcoes = new Empregados();
+            Opçoes opcoes = new Opçoes();
             opcoes.Show();
         }
 
@@ -189,13 +191,6 @@ namespace Garrafeira
             this.Hide();
             Viaturas viaturas = new Viaturas();
             viaturas.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Encomendas encomendas = new Encomendas();
-            encomendas.Show();
         }
     }
 }

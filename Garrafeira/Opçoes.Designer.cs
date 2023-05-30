@@ -1,7 +1,7 @@
 ﻿
 namespace Garrafeira
 {
-    partial class Empregados
+    partial class Opçoes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace Garrafeira
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -41,7 +40,6 @@ namespace Garrafeira
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
@@ -53,16 +51,6 @@ namespace Garrafeira
             this.groupBox1.Size = new System.Drawing.Size(995, 79);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(656, 19);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(124, 50);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Encomendas";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button4
             // 
@@ -80,7 +68,7 @@ namespace Garrafeira
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Empregados";
+            this.button5.Text = "Opções";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -114,13 +102,13 @@ namespace Garrafeira
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Empregados
+            // Opçoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 543);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Empregados";
+            this.Name = "Opçoes";
             this.Text = "Opçoes";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -135,6 +123,5 @@ namespace Garrafeira
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button8;
     }
 }
