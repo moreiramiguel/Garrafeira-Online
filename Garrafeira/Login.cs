@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Login : Form

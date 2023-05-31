@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Clientes : Form
@@ -23,6 +26,11 @@ namespace Garrafeira
         SqlConnection connect = new SqlConnection("Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True");
         SqlDataReader dr;
         SqlCommand cmd;
+
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+            FormListLoad();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -151,23 +159,6 @@ namespace Garrafeira
             viaturas.Show();
         }
 
-        private void Clientes_Load(object sender, EventArgs e)
-        {
-
-            string sqlClientes = "SELECT * FROM Clientes_garrafeira";
-            cmd = new SqlCommand(sqlClientes, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
-
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -191,6 +182,24 @@ namespace Garrafeira
                 }
             }
             Console.ReadLine();
+        }
+
+        private void FormListLoad()
+        {
+
+            string sqlClientes = "SELECT * FROM Clientes_garrafeira";
+            cmd = new SqlCommand(sqlClientes, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
     }
 }

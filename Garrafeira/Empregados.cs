@@ -28,7 +28,10 @@ namespace Garrafeira
         SqlDataReader dr;
         SqlCommand cmd;
 
-
+        private void Empregados_Load(object sender, EventArgs e)
+        {
+            FormListLoad();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -72,22 +75,6 @@ namespace Garrafeira
             encomendas.Show();
         }
 
-        private void Empregados_Load(object sender, EventArgs e)
-        {
-            string sqlEmpregados = "SELECT * FROM Empregados";
-            cmd = new SqlCommand(sqlEmpregados, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlEmpregados, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
-
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -172,6 +159,24 @@ namespace Garrafeira
                 }
             }
         }
+
+        private void FormListLoad()
+        {
+            string sqlEmpregados = "SELECT * FROM Empregados";
+            cmd = new SqlCommand(sqlEmpregados, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlEmpregados, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
+        }
+
 
     }
 }

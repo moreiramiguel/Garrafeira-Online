@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Viaturas : Form
@@ -27,54 +30,9 @@ namespace Garrafeira
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Viaturas_Load(object sender, EventArgs e)
         {
-            string sqlViaturas = "SELECT * FROM Viaturas_Garrafeira";
-            cmd = new SqlCommand(sqlViaturas, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlViaturas, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
-
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
-        }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-            string sql = "SELECT * FROM Viaturas_Garrafeira";
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                DataGrid dataGrid = new DataGrid();
-                dataGrid.DataSource = dataTable;
-
-                tabPage1.Controls.Add(dataGrid);
-                dataGrid.Width = 500;
-                dataGrid.Height = 300;
-
-
-            }
-        }
-
-        private void tabPage2_Click_1(object sender, EventArgs e)
-        {
-
+            FormListaLoad();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -186,6 +144,23 @@ namespace Garrafeira
                     return true;
                 }
             }
+        }
+        
+        private void FormListaLoad()
+        {
+            string sqlViaturas = "SELECT * FROM Viaturas_Garrafeira";
+            cmd = new SqlCommand(sqlViaturas, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlViaturas, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
     }
 }

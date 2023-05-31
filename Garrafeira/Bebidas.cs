@@ -25,6 +25,16 @@ namespace Garrafeira
         SqlDataReader dr;
         SqlCommand cmd;
 
+        private void Bebidas_Load(object sender, EventArgs e)
+        {
+            //ComboBox2
+            ComboBox2Load();
+            //ComboBox3
+            ComboBox3Load();
+            //Lista
+            FormListaLoad();
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -59,41 +69,6 @@ namespace Garrafeira
             Empregados empregados = new Empregados();
             empregados.Show();
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object snender, EventArgs e)
-        {
-            string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
-            string sql = "SELECT * FROM bebidas_alcoolicas";
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                DataGrid dataGrid = new DataGrid();
-                dataGrid.DataSource = dataTable;
-
-                tabPage1.Controls.Add(dataGrid);
-                dataGrid.Width = 500;
-                dataGrid.Height = 300;
-
-
-            }
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             string BebidaBrand = textBox2.Text;
@@ -121,6 +96,12 @@ namespace Garrafeira
             }
             Console.ReadLine();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool InsertBebida(string BebidaBrand,string BebidaName,object BebidaType,string BebidaCountry, string BebidaLitragem, string BebidaStock, string BebidaPrice, string BebidaAlcool)
         {
             string ConnectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
@@ -152,7 +133,6 @@ namespace Garrafeira
                 }
             }
         }
-
         public bool VerifyBebida(string BebidaName)
         {
             string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
@@ -181,9 +161,8 @@ namespace Garrafeira
             }
         }
 
-        private void Bebidas_Load(object sender, EventArgs e)
+        private void ComboBox2Load()
         {
-            //ComboBox2
             string sqlbox2 = "SELECT * FROM Fornecedores_garrafeira";
             cmd = new SqlCommand(sqlbox2, connect);
             connect.Open();
@@ -193,8 +172,10 @@ namespace Garrafeira
                 comboBox2.Items.Add(dr["nome"]);
             }
             connect.Close();
+        }
 
-            //ComboBox3
+        private void ComboBox3Load()
+        {
             string sqlBebidas = "SELECT * FROM bebidas_alcoolicas";
             cmd = new SqlCommand(sqlBebidas, connect);
             connect.Open();
@@ -204,7 +185,10 @@ namespace Garrafeira
                 comboBox3.Items.Add(dr["marca"]);
             }
             connect.Close();
+        }
 
+        private void FormListaLoad()
+        {
             string sqlEmpregados = "SELECT * FROM bebidas_alcoolicas";
             cmd = new SqlCommand(sqlEmpregados, connect);
             connect.Open();
@@ -218,10 +202,9 @@ namespace Garrafeira
             tabPage1.Controls.Add(dataGrid);
             dataGrid.Width = 994;
             dataGrid.Height = 543;
-
-
-
         }
+
+
     }
   }
 

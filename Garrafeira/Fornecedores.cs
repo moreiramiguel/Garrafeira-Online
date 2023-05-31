@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+//"Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
+//"Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
+
 namespace Garrafeira
 {
     public partial class Fornecedores : Form
@@ -25,19 +28,7 @@ namespace Garrafeira
 
         private void Fornecedores_Load(object sender, EventArgs e)
         {
-            string sqlFornecidores = "SELECT * FROM Fornecedores_garrafeira";
-            cmd = new SqlCommand(sqlFornecidores, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlFornecidores, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
-
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
+            FormListaLoad();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -190,27 +181,21 @@ namespace Garrafeira
 
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void FormListaLoad()
         {
-            string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
-            string sql = "SELECT * FROM Fornecedores";
+            string sqlFornecidores = "SELECT * FROM Fornecedores_garrafeira";
+            cmd = new SqlCommand(sqlFornecidores, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlFornecidores, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
 
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                DataGrid dataGrid = new DataGrid();
-                dataGrid.DataSource = dataTable;
-
-                tabPage1.Controls.Add(dataGrid);
-                dataGrid.Width = 500;
-                dataGrid.Height = 300;
-
-            }
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
 
         private void button7_Click_1(object sender, EventArgs e)
