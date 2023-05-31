@@ -35,41 +35,48 @@ namespace Garrafeira
             FormListaLoad();
 
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void buttonBebidas_Click(object sender, EventArgs e)
         {
             this.Hide();
             Bebidas bebidas = new Bebidas();
             bebidas.Show();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonClientes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Clientes clientes = new Clientes();
-            clientes.Show();
+            Clientes Clientes = new Clientes();
+            Clientes.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonEmpregados_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Fornecedores fornecedores = new Fornecedores();
-            fornecedores.Show();
+            Empregados Empregados = new Empregados();
+            Empregados.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonFornecedores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Viaturas viaturas = new Viaturas();
-            viaturas.Show();
+            Fornecedores Fornecedores = new Fornecedores();
+            Fornecedores.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonViaturas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados empregados = new Empregados();
-            empregados.Show();
+            Viaturas Viaturas = new Viaturas();
+            Viaturas.Show();
         }
-        private void button6_Click(object sender, EventArgs e)
+
+        private void buttonEncomendas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas Encomendas = new Encomendas();
+            Encomendas.Show();
+        }
+        private void buttonAddBebida_Click(object sender, EventArgs e)
         {
             string BebidaBrand = textBox2.Text;
             string BebidaName = textBox3.Text;
@@ -95,11 +102,6 @@ namespace Garrafeira
                 }
             }
             Console.ReadLine();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
 
         private bool InsertBebida(string BebidaBrand,string BebidaName,object BebidaType,string BebidaCountry, string BebidaLitragem, string BebidaStock, string BebidaPrice, string BebidaAlcool)
@@ -203,7 +205,6 @@ namespace Garrafeira
             dataGrid.Width = 994;
             dataGrid.Height = 543;
         }
-
 
     }
   }
