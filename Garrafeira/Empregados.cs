@@ -17,8 +17,6 @@ namespace Garrafeira
     public partial class Empregados : Form
     { 
 
-
-
         public Empregados()
         {
             InitializeComponent();
