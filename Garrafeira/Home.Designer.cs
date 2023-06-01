@@ -1,17 +1,17 @@
 ﻿
 namespace Garrafeira
 {
-    partial class Exemplo
+    partial class Home
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variável de designer necessária.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpar os recursos que estão sendo usados.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,11 +21,11 @@ namespace Garrafeira
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código gerado pelo Windows Form Designer
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necessário para suporte ao Designer - não modifique 
+        /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent()
         {
@@ -61,7 +61,7 @@ namespace Garrafeira
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.Name = "panelSideBar";
             this.panelSideBar.Size = new System.Drawing.Size(200, 543);
-            this.panelSideBar.TabIndex = 0;
+            this.panelSideBar.TabIndex = 1;
             // 
             // buttonEncomendas
             // 
@@ -211,7 +211,7 @@ namespace Garrafeira
             this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 100);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // label3
             // 
@@ -225,7 +225,7 @@ namespace Garrafeira
             this.label3.TabIndex = 3;
             this.label3.Text = "Home";
             // 
-            // Exemplo
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,8 +233,9 @@ namespace Garrafeira
             this.ClientSize = new System.Drawing.Size(1184, 543);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSideBar);
-            this.Name = "Exemplo";
-            this.Text = "Exemplo";
+            this.Name = "Form1";
+            this.Text = "Home";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSideBar.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
@@ -247,16 +248,17 @@ namespace Garrafeira
         #endregion
 
         private System.Windows.Forms.Panel panelSideBar;
-        private System.Windows.Forms.Button buttonBebidas;
         private System.Windows.Forms.Button buttonEncomendas;
         private System.Windows.Forms.Button buttonFornecedores;
         private System.Windows.Forms.Button buttonViaturas;
         private System.Windows.Forms.Button buttonEmpregados;
         private System.Windows.Forms.Button buttonClientes;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonBebidas;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
     }
 }
+

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Garrafeira
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,40 +22,46 @@ namespace Garrafeira
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonBebidas_Click(object sender, EventArgs e)
         {
             this.Hide();
             Bebidas bebidas = new Bebidas();
             bebidas.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonClientes_Click(object sender, EventArgs e)
         {
             this.Hide();
             Clientes clientes = new Clientes();
             clientes.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonEmpregados_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Empregados Empregados = new Empregados();
+            Empregados.Show();
+        }
+
+        private void buttonViaturas_Click(object sender, EventArgs e)
         {
             this.Hide();
             Viaturas viaturas = new Viaturas();
             viaturas.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonFornecedores_Click(object sender, EventArgs e)
         {
             this.Hide();
             Fornecedores fornecedores = new Fornecedores();
             fornecedores.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonEncomendas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados opcoes = new Empregados();
-            opcoes.Show();
+            Encomendas Encomendas = new Encomendas();
+            Encomendas.Show();
         }
-
     }
 }

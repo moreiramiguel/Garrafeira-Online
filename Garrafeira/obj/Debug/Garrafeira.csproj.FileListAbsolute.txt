@@ -54,3 +54,4 @@ C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.SucessoForm.resource
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.ErrorForm.resources
 >>>>>>> Stashed changes
 C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Exemplo.resources
+C:\GitHub\Garrafeira-Online\Garrafeira\obj\Debug\Garrafeira.Home.resources

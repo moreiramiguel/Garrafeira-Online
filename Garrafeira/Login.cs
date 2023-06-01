@@ -37,7 +37,7 @@ namespace Garrafeira
 
 
                 // Abra o formulário principal ou o próximo formulário
-                Exemplo formPrincipal = new Exemplo();
+                Home formPrincipal = new Home();
                 formPrincipal.Show();
                 this.Hide();
 

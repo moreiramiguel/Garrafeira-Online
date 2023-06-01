@@ -31,41 +31,7 @@ namespace Garrafeira
         {
             FormListLoad();
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
 
         private bool InsertClient(string clientName, string clientEmail, object clientPhone, string clientNIF, string clientAddress)
         {
@@ -122,45 +88,67 @@ namespace Garrafeira
                 }
             }
         }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void FormListLoad()
         {
-            this.Hide();
-            Bebidas bebidas = new Bebidas();
-            bebidas.Show();
+
+            string sqlClientes = "SELECT * FROM Clientes_garrafeira";
+            cmd = new SqlCommand(sqlClientes, connect);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            adapter.Fill(dataTable);
+
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dataTable;
+
+            tabPage1.Controls.Add(dataGrid);
+            dataGrid.Width = 994;
+            dataGrid.Height = 543;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonBebidas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Clientes clientes = new Clientes();
-            clientes.Show();
+            Bebidas Bebidas = new Bebidas();
+            Bebidas.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonClientes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Fornecedores fornecedores = new Fornecedores();
-            fornecedores.Show();
+            Clientes Clientes = new Clientes();
+            Clientes.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonEmpregados_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados empregados = new Empregados();
-            empregados.Show();
+            Empregados Empregados = new Empregados();
+            Empregados.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonViaturas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Viaturas viaturas = new Viaturas();
-            viaturas.Show();
+            Viaturas Viaturas = new Viaturas();
+            Viaturas.Show();
         }
 
+        private void buttonFornecedores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fornecedores Fornecedores = new Fornecedores();
+            Fornecedores.Show();
+        }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonEncomendas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas Encomendas = new Encomendas();
+            Encomendas.Show();
+        }
+
+        private void buttonAddCliente_Click(object sender, EventArgs e)
         {
             string ClientName = textBox2.Text;
             string ClientEmail = textBox1.Text;
@@ -182,24 +170,6 @@ namespace Garrafeira
                 }
             }
             Console.ReadLine();
-        }
-
-        private void FormListLoad()
-        {
-
-            string sqlClientes = "SELECT * FROM Clientes_garrafeira";
-            cmd = new SqlCommand(sqlClientes, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
-            System.Data.DataTable dataTable = new System.Data.DataTable();
-            adapter.Fill(dataTable);
-
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dataTable;
-
-            tabPage1.Controls.Add(dataGrid);
-            dataGrid.Width = 994;
-            dataGrid.Height = 543;
         }
     }
 }
