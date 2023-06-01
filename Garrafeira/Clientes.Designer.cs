@@ -205,9 +205,9 @@ namespace Garrafeira
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(412, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 37);
+            this.label3.Size = new System.Drawing.Size(131, 37);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Home";
+            this.label3.Text = "Clientes";
             // 
             // panel1
             // 

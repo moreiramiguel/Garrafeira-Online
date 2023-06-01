@@ -30,78 +30,6 @@ namespace Garrafeira
         {
             FormListLoad();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Bebidas bebidas = new Bebidas();
-            bebidas.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Clientes clientes = new Clientes();
-            clientes.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Fornecedores fornecedores = new Fornecedores();
-            fornecedores.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Viaturas viaturas = new Viaturas();
-            viaturas.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Empregados empregados = new Empregados();
-            empregados.Show();
-        }
-
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Encomendas encomendas = new Encomendas();
-            encomendas.Show();
-        }
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string EmpregadoNome = textBox2.Text;
-            string EmpregadoPhone = textBox5.Text;
-            string EmpregadoNIF = textBox3.Text;
-            string EmpregadoSalario = textBox4.Text;
-            object EmpregadoCargo = comboBox1.Text;
-
-            if (VerifyEmpregado(EmpregadoNIF))
-            {
-                if (InsertEmpregado(EmpregadoNome, EmpregadoNIF, EmpregadoPhone, EmpregadoSalario, EmpregadoCargo))
-                {
-                    SucessoForm sf = new SucessoForm();
-                    sf.Show();
-                }
-                else
-                {
-                    ErrorForm ef = new ErrorForm();
-                    ef.Show();
-                }
-            }
-            Console.ReadLine();
-        }
         private bool InsertEmpregado(string EmpregadoNome, string EmpregadoNIF, string EmpregadoPhone, string EmpregadoSalario, object EmpregadoCargo)
         {
             string connectionString = "Data Source=MOREIRA;Initial Catalog=Projeto;Integrated Security=True";
@@ -175,6 +103,70 @@ namespace Garrafeira
             dataGrid.Height = 543;
         }
 
+        private void buttonBebidas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Bebidas bebidas = new Bebidas();
+            bebidas.Show();
+        }
 
+        private void buttonClientes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes clientes = new Clientes();
+            clientes.Show();
+        }
+
+        private void buttonEmpregados_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Empregados empregados = new Empregados();
+            empregados.Show();
+        }
+
+        private void buttonViaturas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Viaturas viaturas = new Viaturas();
+            viaturas.Show();
+        }
+
+        private void buttonFornecedores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fornecedores fornecedores = new Fornecedores();
+            fornecedores.Show();
+        }
+
+        private void buttonEncomendas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas encomendas = new Encomendas();
+            encomendas.Show();
+        }
+
+        private void buttonAddEmpregado_Click(object sender, EventArgs e)
+        {
+            string EmpregadoNome = textBox2.Text;
+            string EmpregadoPhone = textBox5.Text;
+            string EmpregadoNIF = textBox3.Text;
+            string EmpregadoSalario = textBox4.Text;
+            object EmpregadoCargo = comboBox1.Text;
+
+            if (VerifyEmpregado(EmpregadoNIF))
+            {
+                if (InsertEmpregado(EmpregadoNome, EmpregadoNIF, EmpregadoPhone, EmpregadoSalario, EmpregadoCargo))
+                {
+                    SucessoForm sf = new SucessoForm();
+                    sf.Show();
+                }
+                else
+                {
+                    ErrorForm ef = new ErrorForm();
+                    ef.Show();
+                }
+            }
+            Console.ReadLine();
+        }
     }
 }

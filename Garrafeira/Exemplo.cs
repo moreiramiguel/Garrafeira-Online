@@ -38,24 +38,28 @@ namespace Garrafeira
 
         private void buttonEmpregados_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Empregados Empregados = new Empregados();
             Empregados.Show();
         }
 
         private void buttonViaturas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Viaturas Viaturas = new Viaturas();
             Viaturas.Show();
         }
 
         private void buttonFornecedores_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Fornecedores Fornecedores = new Fornecedores();
             Fornecedores.Show();
         }
 
         private void buttonEncomendas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Encomendas Encomendas = new Encomendas();
             Encomendas.Show();
         }

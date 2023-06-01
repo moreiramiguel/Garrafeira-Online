@@ -18,41 +18,49 @@ namespace Garrafeira
         public Encomendas()
         {
             InitializeComponent();
+        
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void buttonBebidas_Click(object sender, EventArgs e)
         {
             this.Hide();
             Bebidas bebidas = new Bebidas();
             bebidas.Show();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void buttonClientes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Clientes clientes = new Clientes();
-            clientes.Show();
+            Clientes Clientes = new Clientes();
+            Clientes.Show();
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        private void buttonEmpregados_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Fornecedores fornecedores = new Fornecedores();
-            fornecedores.Show();
+            Empregados Empregados = new Empregados();
+            Empregados.Show();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void buttonViaturas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Viaturas viaturas = new Viaturas();
-            viaturas.Show();
+            Viaturas Viaturas = new Viaturas();
+            Viaturas.Show();
         }
 
-        private void button5_Click_1(object sender, EventArgs e)
+        private void buttonFornecedores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Empregados opcoes = new Empregados();
-            opcoes.Show();
+            Fornecedores Fornecedores = new Fornecedores();
+            Fornecedores.Show();
+        }
+
+        private void buttonEncomendas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas Encomendas = new Encomendas();
+            Encomendas.Show();
         }
     }
 }

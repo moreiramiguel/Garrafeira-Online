@@ -31,91 +31,6 @@ namespace Garrafeira
             FormListaLoad();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Bebidas bebidas = new Bebidas();
-            bebidas.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Clientes clientes = new Clientes();
-            clientes.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Fornecedores fornecedores = new Fornecedores();
-            fornecedores.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Viaturas viaturas = new Viaturas();
-            viaturas.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Empregados opcoes = new Empregados();
-            opcoes.Show();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string FornecedorName = textBox2.Text;
-            string FornecedorPhone = textBox4.Text;
-            string FornecedorNIF = textBox3.Text;
-            byte[] imageBytes = null;
-
-
-            OpenFileDialog dialog = new OpenFileDialog();
-            //dialog.Filter = "jpg files";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                string imagePath = dialog.FileName;
-                imageBytes = File.ReadAllBytes(imagePath);
-            }
-
-
-            if (verifyFornecedor(FornecedorNIF))
-            {
-                if (insertFornecedores(FornecedorNIF, FornecedorPhone, FornecedorName, imageBytes))
-                {
-                    SucessoForm sf = new SucessoForm();
-                    sf.Show();
-                }
-
-            }
-            else
-            {
-                ErrorForm ef = new ErrorForm();
-                ef.Show();
-            }
-
-        }
-
         public bool verifyFornecedor(String FornecedorNIF)
         {
             string connectionString = "Data Source=LAPTOP-ICOK0BQ9;Initial Catalog=Garrafeira;Integrated Security=True";
@@ -172,15 +87,6 @@ namespace Garrafeira
             }
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void FormListaLoad()
         {
             string sqlFornecidores = "SELECT * FROM Fornecedores_garrafeira";
@@ -198,9 +104,80 @@ namespace Garrafeira
             dataGrid.Height = 543;
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        private void buttonBebidas_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Bebidas bebidas = new Bebidas();
+            bebidas.Show();
+        }
 
+        private void buttonClientes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes clientes = new Clientes();
+            clientes.Show();
+        }
+
+        private void buttonEmpregados_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fornecedores fornecedores = new Fornecedores();
+            fornecedores.Show();
+        }
+
+        private void buttonViaturas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Viaturas viaturas = new Viaturas();
+            viaturas.Show();
+        }
+
+        private void buttonFornecedores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Empregados Empregados = new Empregados();
+            Empregados.Show();
+        }
+
+        private void buttonEncomendas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Encomendas Encomendas = new Encomendas();
+            Encomendas.Show();
+        }
+
+        private void buttonAddFornecedor_Click(object sender, EventArgs e)
+        {
+            string FornecedorName = textBox2.Text;
+            string FornecedorPhone = textBox4.Text;
+            string FornecedorNIF = textBox3.Text;
+            byte[] imageBytes = null;
+
+
+            OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Filter = "jpg files";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = dialog.FileName;
+                imageBytes = File.ReadAllBytes(imagePath);
+            }
+
+
+            if (verifyFornecedor(FornecedorNIF))
+            {
+                if (insertFornecedores(FornecedorNIF, FornecedorPhone, FornecedorName, imageBytes))
+                {
+                    SucessoForm sf = new SucessoForm();
+                    sf.Show();
+                }
+
+            }
+            else
+            {
+                ErrorForm ef = new ErrorForm();
+                ef.Show();
+            }
         }
     }
 }

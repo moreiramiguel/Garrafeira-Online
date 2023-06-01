@@ -76,6 +76,7 @@ namespace Garrafeira
             this.buttonClientes = new System.Windows.Forms.Button();
             this.buttonBebidas = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,6 +84,7 @@ namespace Garrafeira
             this.tabControl1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelSideBar.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -594,11 +596,24 @@ namespace Garrafeira
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(41)))), ((int)(((byte)(47)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label17);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 100);
             this.panel1.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label17.Location = new System.Drawing.Point(423, 31);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 37);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Bebidas";
             // 
             // Bebidas
             // 
@@ -621,6 +636,8 @@ namespace Garrafeira
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelSideBar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +691,6 @@ namespace Garrafeira
         private System.Windows.Forms.Button buttonFornecedores;
         private System.Windows.Forms.Button buttonEmpregados;
         private System.Windows.Forms.Button buttonClientes;
+        private System.Windows.Forms.Label label17;
     }
 }
