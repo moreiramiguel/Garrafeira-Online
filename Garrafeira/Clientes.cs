@@ -90,17 +90,14 @@ namespace Garrafeira
         }
         private void FormListLoad()
         {
-
-            string sqlClientes = "SELECT * FROM Clientes_garrafeira";
-            cmd = new SqlCommand(sqlClientes, connect);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlClientes, connect);
+            SqlConnection con = new SqlConnection("Data Source=MOREIRA;Initial Catalog=GarrafeiraOnline;Integrated Security=True");
+            con.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter("exibirClientes", con);
+            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             System.Data.DataTable dataTable = new System.Data.DataTable();
             adapter.Fill(dataTable);
-
             DataGrid dataGrid = new DataGrid();
             dataGrid.DataSource = dataTable;
-
             tabPage1.Controls.Add(dataGrid);
             dataGrid.Width = 994;
             dataGrid.Height = 543;
@@ -150,12 +147,12 @@ namespace Garrafeira
 
         private void buttonAddCliente_Click(object sender, EventArgs e)
         {
-            string ClientName = textBox2.Text;
-            string ClientEmail = textBox1.Text;
-            object ClientPhone = comboBox1.SelectedItem;
-            string ClientNIF = textBox3.Text;
-            string ClientAddress = textBox5.Text;
-
+            int NIF = int.Parse(textBox3.Text);
+            string Nome = textBox2.Text;
+            string Mail = textBox3.Text; 
+            object Metodo = comboBox1.SelectedItem;
+            string Morada = textBox5.Text;
+            /*
             if (VerifyClient(ClientNIF))
             {
                 if (InsertClient(ClientName, ClientEmail, ClientPhone, ClientNIF, ClientAddress))
@@ -169,7 +166,46 @@ namespace Garrafeira
                     ef.Show();
                 }
             }
-            Console.ReadLine();
+            */
+            if(InserirCliente(NIF, Nome, Mail, Metodo, Morada) >= 0)
+            {
+                SucessoForm sf = new SucessoForm();
+                sf.Show();
+            }
+            else
+            {
+                ErrorForm ef = new ErrorForm();
+                ef.Show();
+            }
         }
+
+        private int InserirCliente(int NIF, string Nome, string Mail, object Metodo, string Morada)
+        {
+            string connectionString = "Data Source=MOREIRA;Initial Catalog=GarrafeiraOnline;Integrated Security=True";
+            int id = 0;
+            try
+            {
+            
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(null, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "go_InserirCliente";
+                    command.Parameters.AddWithValue("@NIF", NIF);
+                    command.Parameters.AddWithValue("@Nome", Nome);
+                    command.Parameters.AddWithValue("@Mail", Mail);
+                    command.Parameters.AddWithValue("@Metodo", Metodo);
+                    command.Parameters.AddWithValue("@Morada", Morada);
+
+                    id = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Falha ao inserir\n\n" + ex.Message);
+            }
+            return id;
+        }
+        
     }
 }
